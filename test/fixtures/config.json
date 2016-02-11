@@ -1,0 +1,13 @@
+{
+  "jiraUrl": "https://jira.example.com",
+  "projects": {
+    "PRO": {
+      "slackWebHookUrl": "https://hooks.slack.com/services/EXAMPLE/KEY",
+      "payload": {
+        "channel": "#my-example-channel",
+        "username": "Jira",
+        "icon_emoji": ":ticket:"
+      }
+    }
+  }
+}

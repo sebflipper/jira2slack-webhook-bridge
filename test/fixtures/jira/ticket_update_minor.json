@@ -1,0 +1,27 @@
+{
+  "webhookEvent": "jira:issue_updated",
+  "user": {
+    "displayName": "Seb"
+  },
+  "issue": {
+    "key": "PRO-1234",
+    "fields": {
+      "project": {
+        "key": "PRO"
+      },
+      "labels": [
+        "my-label"
+      ],
+      "status": {
+        "name": "Open"
+      },
+      "summary": "Push notification test"
+    }
+  },
+  "changelog": {
+    "items": [{
+      "field": "labels",
+      "toString": "my-label"
+    }]
+  }
+}

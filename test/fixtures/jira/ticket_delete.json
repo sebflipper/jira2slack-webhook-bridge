@@ -1,0 +1,18 @@
+{
+  "webhookEvent": "jira:issue_deleted",
+  "user": {
+    "displayName": "Seb"
+  },
+  "issue": {
+    "key": "PRO-1234",
+    "fields": {
+      "summary": "Push notification test",
+      "project": {
+        "key": "PRO"
+      },
+      "status": {
+        "name": "Open"
+      }
+    }
+  }
+}
