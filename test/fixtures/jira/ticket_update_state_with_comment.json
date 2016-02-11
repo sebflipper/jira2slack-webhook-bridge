@@ -1,0 +1,31 @@
+{
+  "webhookEvent": "jira:issue_updated",
+  "user": {
+    "displayName": "Seb"
+  },
+  "issue": {
+    "key": "PRO-1234",
+    "fields": {
+      "project": {
+        "key": "PRO"
+      },
+      "status": {
+        "name": "Resolved"
+      },
+      "summary": "Push notification test"
+    }
+  },
+  "changelog": {
+    "items": [{
+      "field": "resolution",
+      "toString": "Completed"
+    }, {
+      "field": "status",
+      "fromString": "Open",
+      "toString": "Resolved"
+    }]
+  },
+  "comment": {
+    "body": "Update status with comment"
+  }
+}

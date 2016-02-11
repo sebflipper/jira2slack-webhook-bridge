@@ -1,0 +1,19 @@
+{
+  "webhookEvent": "jira:issue_created",
+  "user": {
+    "displayName": "Seb"
+  },
+  "issue": {
+    "key": "PRO-1234",
+    "fields": {
+      "summary": "Push notification test",
+      "project": {
+        "key": "UNKNOWN"
+      },
+      "status": {
+        "name": "Open"
+      },
+      "description": "Description"
+    }
+  }
+}

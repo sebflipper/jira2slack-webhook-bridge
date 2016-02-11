@@ -1,0 +1,31 @@
+{
+  "name": "jira2slack-webhook-bridge",
+  "version": "0.0.1",
+  "description": "Allows you to see realtime Jira updates in your Slack channel",
+  "main": "src/processor/JiraWebHookProcessor.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node src/index.js",
+    "test": "node_modules/.bin/mocha --recursive"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
+    "request": "^2.69.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebflipper/jira2slack-webhook-bridge.git"
+  },
+  "author": "Seb Flippence",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebflipper/jira2slack-webhook-bridge/issues"
+  },
+  "homepage": "https://github.com/sebflipper/jira2slack-webhook-bridge#readme"
+}
