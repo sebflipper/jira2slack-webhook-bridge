@@ -5,9 +5,11 @@ let express = require('express'),
     bodyParser = require('body-parser'),
 
     JiraWebHookProcessor = require('./processor/JiraWebHookProcessor'),
-    config = require('./config/default.json');
+    generatedAutomatedResponse = require('./response-matching/generate-automated-response'),
+    responsesConfig = require('./../config/responses-config.json');
 
-require('./response-matching/ResponseMatcher');
+
+
 app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
   extended: true
@@ -30,7 +32,10 @@ app.post('/jira-webhook', (req, res) => {
 });
 
 app.post('/prometheus-bot', (req, res) => {
-  res.send('OK');
+  // get the title somehow
+  const title = 'This is an example title. I need help closing a sprint';
+  const response = generatedAutomatedResponse({ config: responsesConfig, title: title });
+  res.send(response);
 });
 
 
