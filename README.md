@@ -2,7 +2,7 @@
 To configure all of the possible automated response and their keywords, modify `src/config/responses-config.json` to your needs.
 
 If you want to test the bot to see what response it will generate for a given Jira ticket title, you can start the server with `npm start` and hit
-the test endpoint `http://localhost:3000/prometheus-bot-test?title="Close previous sprint"`.
+the test endpoint `http://localhost:3000/prometheus-bot-test?title="Close previous sprint"` with any title you want.
 
 ### Configure and Debug
 If you'd like to view some debug information about the automated response generation, you can set `DEBUG=true` in `src/response-matching/generated-automated-response.js`.
