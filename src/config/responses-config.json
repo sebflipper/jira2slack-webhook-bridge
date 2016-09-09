@@ -1,0 +1,26 @@
+{
+  "baseTest": {
+    "intro": "this is a bot",
+    "noMatch": "No matches, email Dorian",
+    "disclaimer": "this may not be right"
+  },
+  "responses": [{
+    "keywords": [
+      "I need help!",
+      "blah admin blah"
+    ],
+    "responseText": "asdlijsfd this is the response"
+  }, {
+    "keywords": [
+      "I need help!",
+      "blah admin blah"
+    ],
+    "responseText": "asdlijsfd this is the response"
+  }, {
+    "keywords": [
+      "I need help!",
+      "blah admin blah"
+    ],
+    "responseText": "asdlijsfd this is the response"
+  }]
+}

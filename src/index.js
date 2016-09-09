@@ -7,6 +7,7 @@ let express = require('express'),
     JiraWebHookProcessor = require('./processor/JiraWebHookProcessor'),
     config = require('./config/default.json');
 
+require('./response-matching/ResponseMatcher');
 app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
   extended: true
@@ -27,6 +28,11 @@ app.post('/jira-webhook', (req, res) => {
 
   res.send('OK');
 });
+
+app.post('/prometheus-bot', (req, res) => {
+  res.send('OK');
+});
+
 
 app.listen(3000, () => {
   console.log('jira2slack-webhook-bridge listening on port 3000!');
