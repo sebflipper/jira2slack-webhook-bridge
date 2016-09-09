@@ -1,4 +1,5 @@
 {
+  "minScoreThreshold": 200,
   "base": {
     "introMsg": "This is a bot. The following automated responses have been found that may help you: ",
     "noMatchMsg": "Sorry, no matches were found. Contact Dorian for further assistance",

@@ -1,8 +1,5 @@
 const fuzzy = require('fuzzy');
 
-// minimum matching score to be included
-const MIN_SCORE_THRESHOLD = 200;
-
 // debug helpers. set to true for debug loggin
 const DEBUG = false;
 const debugLog = (msg) => {
@@ -19,7 +16,7 @@ const debugLog = (msg) => {
  * 
  * @returns {Array} array of matching response texts
  */
-const getMatchingResponses = ({ responses, title }) => {
+const getMatchingResponses = ({ responses, minScoreThreshold, title }) => {
   const titleWords = title.split(' ');
   let ratedResponses = [].concat(responses);
   debugLog('Finding automated response for title "' + title + '"');
@@ -52,7 +49,7 @@ const getMatchingResponses = ({ responses, title }) => {
       return a.score < b.score;
     })
     .filter((el) => {
-      return el.score > MIN_SCORE_THRESHOLD;
+      return el.score > minScoreThreshold;
     });
   return goodResponses;
 };
@@ -67,8 +64,8 @@ const getMatchingResponses = ({ responses, title }) => {
  */
 const generateAutomatedResponse = ({ config, title }) => {
   const { introMsg, noMatchMsg, disclaimerMsg } = config.base;
-  const { responses } = config;
-  const matchingResponses = getMatchingResponses({ responses, title });
+  const { responses, minScoreThreshold } = config;
+  const matchingResponses = getMatchingResponses({ responses, minScoreThreshold, title });
   // const responsesText = matchingResponses.length > 0 ? 
   const newLine = '\r\n';
   let fullResponse = introMsg + newLine + newLine;

@@ -5,8 +5,9 @@ If you want to test the bot to see what response it will generate for a given Ji
 the test endpoint `http://localhost:3000/prometheus-bot-test?title="Close previous sprint"`.
 
 ### Configure and Debug
-If you'd like to view some debug information about the automated response generation, you can set `DEBUG=true` in `src/response-matching/generated-automated-response.js`.
-You can also change the threshold of the minimum matching score for a response to be included by changing the `MIN_SCORE_THRESHOLD` value in that same file.
+You can also change the threshold of the minimum matching score for a response to be included by changing the `minScoreThreshold` value in the `responses-config.json` file.
+
+If you'd like to view some debug information about the automated response generation, such as the matching scores, you can set `DEBUG=true` in `src/response-matching/generated-automated-response.js`.
 
 # Jira to Slack WebHook Bridge
 
