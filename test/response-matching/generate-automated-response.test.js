@@ -22,7 +22,7 @@ describe('generate-automated-response', () => {
     assert(result.indexOf('This is a response for how to close a sprint.') > -1);
     assert(result.indexOf('- This is a response for how to close a sprint.') === -1);
   });
-   it('should include two responses with indexes for each', () => {
+  it('should include two responses with indexes for each', () => {
     const title = 'I need to close a previous sprint';
     const result = generateAutomatedResponse({ config: responsesConfigExample, title });
     assert(result.indexOf('1 - This is a response for how to view previous sprints.') > -1);

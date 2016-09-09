@@ -6,7 +6,7 @@ let express = require('express'),
 
     JiraWebHookProcessor = require('./processor/JiraWebHookProcessor'),
     generatedAutomatedResponse = require('./response-matching/generate-automated-response'),
-    responsesConfig = require('./../config/responses-config.json');
+    responsesConfig = require('./config/responses-config.json');
 
 
 
@@ -36,6 +36,15 @@ app.post('/prometheus-bot', (req, res) => {
   const title = 'This is an example title. I need help closing a sprint';
   const response = generatedAutomatedResponse({ config: responsesConfig, title: title });
   res.send(response);
+});
+
+app.get('/prometheus-bot-test', (req, res) => {
+  const title = req.query.title;
+  if (!title) {
+    res.send('No title given. You can provide a title in the url via /prometheus-bot-test/?title="Some title text"');
+  }
+  const response = generatedAutomatedResponse({ config: responsesConfig, title: title });
+  res.send('<html><body><pre>' + response  + '</pre></body></html>');
 });
 
 
