@@ -1,3 +1,13 @@
+# Automated Jira Response Bot
+To configure all of the possible automated response and their keywords, modify `src/config/responses-config.json` to your needs.
+
+If you want to test the bot to see what response it will generate for a given Jira ticket title, you can start the server with `npm start` and hit
+the test endpoint `http://localhost:3000/prometheus-bot-test?title="Close previous sprint"`.
+
+### Configure and Debug
+If you'd like to view some debug information about the automated response generation, you can set `DEBUG=true` in `src/response-matching/generated-automated-response.js`.
+You can also change the threshold of the minimum matching score for a response to be included by changing the `MIN_SCORE_THRESHOLD` value in that same file.
+
 # Jira to Slack WebHook Bridge
 
 [![Build Status](https://secure.travis-ci.org/sebflipper/jira2slack-webhook-bridge.png)](http://travis-ci.org/sebflipper/jira2slack-webhook-bridge?branch=master)
